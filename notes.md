@@ -7,4 +7,4 @@ Transaction
  belongs_to :account
  :account_id - integer, :amount - float, :kind - string, :date - datetime, :asset - string
 
-User - stretch goal
+User - stretch goal(watch globetrotter video)
