@@ -20,15 +20,15 @@ class Account < ApplicationRecord
 
     def undo_balance(transaction) 
         if transaction.kind == 'deposit'
-            self.balance = self.balance - transaction.amount
-            self.save
-        elsif transaction.kind == 'withdraw'
             if self.balance >= transaction.amount
-            self.balance = self.balance + transaction.amount
-            self.save
+                self.balance = self.balance - transaction.amount
+                self.save
             else
                 return 'Balance too low.'
             end
+        elsif transaction.kind == 'withdraw'
+            self.balance = self.balance + transaction.amount
+            self.save
         end 
     end
 

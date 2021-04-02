@@ -25,9 +25,12 @@ class Api::V1::TransactionsController < ApplicationController
     def destroy
         @transaction = Transaction.find(params["id"])
         @account = Account.find(@transaction.account_id)
-        @transaction.destroy
-        render json: @account
-        #binding.pry
+        if @account.undo_balance(@transaction)
+            @transaction.destroy
+            render json: @account
+        else
+            render json: {error: 'Balance too low'}
+        end
     end 
 
     private
