@@ -23,10 +23,11 @@ class Api::V1::TransactionsController < ApplicationController
     end 
 
     def destroy
-       transaction = Transaction.find(params[:id])
-       transaction.destroy
-       @account.undo_balance(transaction)
-       render json: transaction
+        @transaction = Transaction.find(params["id"])
+        @account = Account.find(@transaction.account_id)
+        @transaction.destroy
+        render json: @account
+        #binding.pry
     end 
 
     private
