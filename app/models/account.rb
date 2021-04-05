@@ -4,7 +4,8 @@ class Account < ApplicationRecord
 
     validates :name, :balance, presence: true
 
-    def update_balance(transaction) #anytime a transaction is made, this function is called to update the balance associated to that account.
+    def update_balance(transaction)
+        #byebug #anytime a transaction is made, this function is called to update the balance associated to that account.
         if transaction.kind == 'deposit'
             self.balance = self.balance + transaction.amount
             self.save

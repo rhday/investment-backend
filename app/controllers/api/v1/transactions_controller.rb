@@ -18,7 +18,7 @@ class Api::V1::TransactionsController < ApplicationController
             @transaction.save
             render json: @account
         else
-            render json: {error: 'Balance too low.'} #error message not appearing
+            render json: {error: 'Balance too low.'} 
         end
     end 
 
@@ -41,7 +41,7 @@ class Api::V1::TransactionsController < ApplicationController
 
     def transaction_params
         #the params require(.require) an account and permit (.permit) the attributes specified 
-        params.require(:transaction).permit(:amount ,:account_id, :kind, :date, :asset)
+        params.require(:transaction).permit(:amount ,:account_id, :kind, :asset)
     end  
 
 end
