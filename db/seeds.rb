@@ -1,4 +1,10 @@
-account = Account.create(name: 'Investment', balance: 1000)
+User.destroy_all
+Account.destroy_all
+Transaction.destroy_all
+
+user = User.create(name: "Ziggy", username: "Stardust", password: "password")
+
+account = user.accounts.create(name: 'Investment', balance: 1000)
 
 transaction_one = Transaction.create(account_id: 1, amount: 10, kind: 'deposit', date: Date.today, asset: 'Bitcoin')
 
