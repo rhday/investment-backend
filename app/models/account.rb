@@ -2,6 +2,8 @@ class Account < ApplicationRecord
 
     has_many :transactions
 
+    belongs_to :User
+
     validates :name, :balance, presence: true
 
     def update_balance(transaction)
