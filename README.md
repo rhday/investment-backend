@@ -1,4 +1,4 @@
-# Expenses Tracker Backend/API
+# Investment Tracker Backend/API
 
 Investment Tracker is a React and Rails application for tracking one's personal investments.
 
