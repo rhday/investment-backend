@@ -1,24 +1,27 @@
-# README
+# Expenses Tracker Backend/API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Investment Tracker is a React and Rails application for tracking one's personal investments.
 
-Things you may want to cover:
+## Installation
+```
+    1. Fork and clone the repo.
+    2. Run 'bundle install'
+    3. Run 'rake/rails db:seed'
+    4. Run 'rake/rails db:migrate'
+```
+## Usage
+```
+    1.Run 'rails s'
+```
 
-* Ruby version
+## Contributing
 
-* System dependencies
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Configuration
+## Frontend
 
-* Database creation
+https://github.com/rhday/investment-frontend
 
-* Database initialization
+## License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[MIT](https://choosealicense.com/licenses/mit/)
